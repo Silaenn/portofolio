@@ -39,18 +39,24 @@
 }
 
 .info {
+  border: $border-width solid $border;
+  box-shadow: $shadow;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  background: $bg;
 }
 
 .block {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 12px;
-  border: $border-width solid $border;
-  background: $bg;
+  padding: 12px 0;
+  border-bottom: $border-width solid $border;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 }
 
 .label {
@@ -71,8 +77,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 12px;
-  border: $border-width solid $border;
+  padding: 12px 0;
 }
 
 .socialLinks {

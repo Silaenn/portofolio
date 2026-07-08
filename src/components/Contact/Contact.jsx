@@ -21,6 +21,10 @@ export default function Contact() {
         <SectionTitle>Contact</SectionTitle>
         <div ref={layoutRef} className={styles.layout}>
           <div className={styles.info}>
+            <div className={styles.terminalHeader}>
+              <span className={styles.prompt}>$</span>
+              <span className={styles.command}>contact_info</span>
+            </div>
             <div className={styles.block}>
               <span className={styles.label}>EMAIL</span>
               <span className={styles.value}>{config.email}</span>
