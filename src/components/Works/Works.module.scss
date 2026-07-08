@@ -21,6 +21,10 @@
   display: flex;
   gap: 24px;
   position: relative;
+
+  @include mobile {
+    gap: 16px;
+  }
 }
 
 .line {
@@ -68,6 +72,10 @@
   font-size: 1.25rem;
   margin-bottom: 4px;
   text-transform: uppercase;
+
+  @include mobile {
+    font-size: 1rem;
+  }
 }
 
 .role {
@@ -81,4 +89,8 @@
   font-size: 0.9375rem;
   max-width: 500px;
   color: $tertiary;
+
+  @include mobile {
+    font-size: 0.875rem;
+  }
 }

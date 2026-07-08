@@ -87,12 +87,14 @@
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: $font-mono;
   font-weight: 700;
   font-size: 0.875rem;
   text-transform: uppercase;
   padding: 12px 24px;
+  min-height: 44px;
   border: $border-width solid $border;
   background: $text;
   color: $bg;
@@ -135,6 +137,8 @@
   border: $border-width solid $border;
   overflow: hidden;
   box-shadow: $shadow;
+
+  max-width: 100%;
 
   @include mobile {
     width: 200px;

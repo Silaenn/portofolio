@@ -37,6 +37,7 @@
   color: $text;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 
   @include mobile {
     font-size: 1.125rem;
@@ -47,7 +48,7 @@
   display: flex;
   gap: 4px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 860px) {
     display: none;
   }
 }
@@ -74,15 +75,17 @@
   display: none;
   flex-direction: column;
   gap: 8px;
-  padding: 4px;
-  width: 32px;
-  height: 26px;
+  padding: 11px 4px;
+  min-width: 44px;
+  min-height: 44px;
+  height: auto;
   justify-content: center;
+  align-items: center;
   border: none;
   background: none;
   cursor: pointer;
 
-  @media (max-width: 900px) {
+  @media (max-width: 860px) {
     display: flex;
   }
 
