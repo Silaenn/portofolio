@@ -172,7 +172,8 @@ npm run build
 
 ## Author
 
-**Project:** [Silaenn/portofolio](https://github.com/Silaenn/portofolio)  
+**Live demo:** [aaron-hanson-porto.vercel.app](https://aaron-hanson-porto.vercel.app)  
+**Repo:** [Silaenn/portofolio](https://github.com/Silaenn/portofolio)  
 **Template by:** Aaron Hanson (dummy data)
 
 ---
