@@ -19,6 +19,9 @@ function App() {
 
   useEffect(() => {
     ScrollTrigger.refresh();
+    const onLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', onLoad);
+    return () => window.removeEventListener('load', onLoad);
   }, []);
 
   useEffect(() => {

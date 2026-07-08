@@ -11,7 +11,7 @@ export default function useScrollReveal(offset = 60, duration = 0.8) {
     const el = ref.current;
     if (!el) return;
 
-    gsap.fromTo(
+    const ctx = gsap.fromTo(
       el,
       { y: offset, opacity: 0 },
       {
@@ -21,11 +21,14 @@ export default function useScrollReveal(offset = 60, duration = 0.8) {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 85%',
+          start: 'top bottom',
+          invalidateOnRefresh: true,
           toggleActions: 'play none none none',
         },
       }
     );
+
+    return () => ctx.revert();
   }, [offset, duration]);
 
   return ref;

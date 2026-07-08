@@ -7,6 +7,10 @@
   align-items: center;
   border-bottom: $border-width solid $border;
   position: relative;
+
+  @include mobile {
+    padding-bottom: 40px;
+  }
 }
 
 .inner {
@@ -137,6 +141,7 @@
 
   @include mobile {
     order: -1;
+    padding-top: 40px;
   }
 }
 

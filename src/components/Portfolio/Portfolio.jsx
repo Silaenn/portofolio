@@ -34,7 +34,8 @@ export default function Portfolio() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: gridRef.current,
-            start: 'top 85%',
+            start: 'top bottom',
+            invalidateOnRefresh: true,
             toggleActions: 'play none none none',
           },
         }
