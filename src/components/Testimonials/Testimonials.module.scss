@@ -38,7 +38,7 @@
 
     .mark { color: $bg; }
     .name { color: $bg; }
-    .title { color: rgba(255,255,255,0.6); }
+    .title { color: $bg; }
   }
 }
 
@@ -82,7 +82,7 @@
 .placeholder {
   width: 100%;
   height: 100%;
-  background: #ccc;
+  background: $muted;
 }
 
 .name {
@@ -93,5 +93,5 @@
 
 .title {
   font-size: 0.8125rem;
-  color: #666;
+  color: $secondary;
 }

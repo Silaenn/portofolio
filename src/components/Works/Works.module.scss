@@ -56,7 +56,7 @@
 .year {
   font-family: $font-mono;
   font-size: 0.875rem;
-  color: $accent;
+  color: $accent-text;
   letter-spacing: 0.1em;
   display: inline-block;
   margin-bottom: 6px;
@@ -73,12 +73,12 @@
 .role {
   font-family: $font-mono;
   font-size: 0.8125rem;
-  color: #666;
+  color: $secondary;
   margin-bottom: 8px;
 }
 
 .desc {
   font-size: 0.9375rem;
   max-width: 500px;
-  color: #444;
+  color: $tertiary;
 }

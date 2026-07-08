@@ -43,7 +43,7 @@
 .label {
   font-family: $font-mono;
   font-size: 0.875rem;
-  color: $accent;
+  color: $accent-text;
   margin-bottom: 16px;
   letter-spacing: 0.15em;
   display: inline-block;
@@ -154,10 +154,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f0f0;
+  background: $muted;
   font-family: $font-mono;
   font-size: 0.75rem;
-  color: #999;
+  color: $disabled;
   letter-spacing: 0.1em;
 }
 
@@ -169,7 +169,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #666;
+  color: $secondary;
   margin-top: 32px;
   padding-top: 16px;
   border-top: $border-width solid $border;
@@ -178,7 +178,7 @@
 .dot {
   width: 8px;
   height: 8px;
-  background: #4ade80;
+  background: $accent;
   display: inline-block;
   animation: pulse 2s ease-in-out infinite;
 }
