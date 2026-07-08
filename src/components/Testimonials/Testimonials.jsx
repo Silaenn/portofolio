@@ -1,4 +1,5 @@
 import SectionTitle from '../shared/SectionTitle';
+import SectionNumber from '../shared/SectionNumber';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './Testimonials.module.scss';
@@ -10,7 +11,7 @@ export default function Testimonials() {
   return (
     <section className={styles.section} id="testimonials">
       <div className={styles.inner}>
-        <span className={styles.number}>06</span>
+        <SectionNumber>06</SectionNumber>
         <SectionTitle>Testimonials</SectionTitle>
         <div ref={gridRef} className={styles.grid}>
           {data.map((d) => (

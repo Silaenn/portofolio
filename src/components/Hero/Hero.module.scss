@@ -19,22 +19,6 @@
   position: relative;
 }
 
-.number {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  font-family: $font-mono;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #eee;
-  line-height: 1;
-  pointer-events: none;
-
-  @include mobile {
-    font-size: 2rem;
-  }
-}
-
 .content > *,
 .photoCol {
   opacity: 0;

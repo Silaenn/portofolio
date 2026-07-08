@@ -11,22 +11,6 @@
   position: relative;
 }
 
-.number {
-  position: absolute;
-  top: 0;
-  right: 24px;
-  font-family: $font-mono;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #eee;
-  line-height: 1;
-  pointer-events: none;
-
-  @include mobile {
-    font-size: 2rem;
-  }
-}
-
 .layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -61,7 +45,7 @@
 
 .label {
   font-family: $font-mono;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   color: $accent;
   text-transform: uppercase;
   letter-spacing: 0.1em;

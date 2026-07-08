@@ -1,4 +1,5 @@
 import SectionTitle from '../shared/SectionTitle';
+import SectionNumber from '../shared/SectionNumber';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './Works.module.scss';
@@ -9,7 +10,7 @@ export default function Works() {
   return (
     <section className={styles.section} id="works">
       <div className={styles.inner}>
-        <span className={styles.number}>04</span>
+        <SectionNumber>04</SectionNumber>
         <SectionTitle>Experience</SectionTitle>
         <div ref={timelineRef} className={styles.timeline}>
           {config.works.map((d, i) => (

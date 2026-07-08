@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SectionTitle from '../shared/SectionTitle';
 import BrutalButton from '../shared/BrutalButton';
+import SectionNumber from '../shared/SectionNumber';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './Contact.module.scss';
@@ -17,7 +18,7 @@ export default function Contact() {
   return (
     <section className={styles.section} id="contact">
       <div className={styles.inner}>
-        <span className={styles.number}>07</span>
+        <SectionNumber>07</SectionNumber>
         <SectionTitle>Contact</SectionTitle>
         <div ref={layoutRef} className={styles.layout}>
           <div className={styles.info}>

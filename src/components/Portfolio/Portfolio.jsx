@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import SectionTitle from '../shared/SectionTitle';
+import SectionNumber from '../shared/SectionNumber';
 import PortfolioList from '../PortfolioList/PortfolioList';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
@@ -52,7 +53,7 @@ export default function Portfolio() {
   return (
     <section className={styles.section} id="portfolio">
       <div className={styles.inner}>
-        <span className={styles.number}>03</span>
+        <SectionNumber>03</SectionNumber>
         <SectionTitle>Portfolio</SectionTitle>
         <ul ref={filtersRef} className={styles.filters}>
           {config.categories.map((item) => (

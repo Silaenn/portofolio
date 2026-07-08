@@ -1,4 +1,5 @@
 import SectionTitle from '../shared/SectionTitle';
+import SectionNumber from '../shared/SectionNumber';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './About.module.scss';
@@ -9,7 +10,7 @@ export default function About() {
   return (
     <section className={styles.section} id="about">
       <div className={styles.inner}>
-        <span className={styles.number}>02</span>
+        <SectionNumber>02</SectionNumber>
         <SectionTitle>About</SectionTitle>
         <div ref={contentRef} className={styles.layout}>
           <div className={styles.avatarCol}>

@@ -11,22 +11,6 @@
   position: relative;
 }
 
-.number {
-  position: absolute;
-  top: 0;
-  right: 24px;
-  font-family: $font-mono;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #eee;
-  line-height: 1;
-  pointer-events: none;
-
-  @include mobile {
-    font-size: 2rem;
-  }
-}
-
 .filters {
   display: flex;
   gap: 8px;

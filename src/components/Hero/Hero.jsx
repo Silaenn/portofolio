@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import SectionNumber from '../shared/SectionNumber';
 import config from '../../config/portfolio.config';
 import styles from './Hero.module.scss';
 
@@ -29,7 +30,7 @@ export default function Hero() {
   return (
     <section className={styles.section} id="hero">
       <div className={styles.inner}>
-        <span className={styles.number}>01</span>
+        <SectionNumber>01</SectionNumber>
         <div className={styles.layout}>
           <div ref={contentRef} className={styles.content}>
             <p className={styles.label}>HI_THERE</p>

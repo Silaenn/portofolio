@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionTitle from '../shared/SectionTitle';
+import SectionNumber from '../shared/SectionNumber';
 import config from '../../config/portfolio.config';
 import styles from './Skills.module.scss';
 import {
@@ -65,7 +66,7 @@ export default function Skills() {
   return (
     <section className={styles.section} id="skills">
       <div className={styles.inner}>
-        <span className={styles.number}>05</span>
+        <SectionNumber>05</SectionNumber>
         <SectionTitle>Skills</SectionTitle>
         <div ref={gridRef} className={styles.grid}>
           {config.skills.map((skill) => {
