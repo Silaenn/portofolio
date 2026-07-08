@@ -27,7 +27,7 @@ export default function useScrollReveal(offset = 60, duration = 0.6) {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: el,
-            start: 'top bottom',
+            start: 'top bottom-=170',
             invalidateOnRefresh: true,
             toggleActions: 'play none none none',
           },
