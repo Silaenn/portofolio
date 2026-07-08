@@ -69,7 +69,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   flex: 1;
 }
 
@@ -86,12 +86,12 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .tag {
   font-family: $font-mono;
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   text-transform: uppercase;
   padding: 4px 8px;
   border: 1px solid $border;

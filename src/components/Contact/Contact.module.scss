@@ -75,7 +75,7 @@
     text-transform: uppercase;
     color: $text;
     text-decoration: none;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border: $border-width solid $border;
     letter-spacing: 0.05em;
     transition: all 0.1s ease;
@@ -124,7 +124,7 @@
 }
 
 .input, .textarea {
-  padding: 10px 12px;
+  padding: 12px;
   border: $border-width solid $border;
   background: $bg;
   font-size: 1rem;

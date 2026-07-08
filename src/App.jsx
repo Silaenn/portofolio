@@ -32,7 +32,7 @@ function App() {
       const tryScroll = () => {
         const el = document.getElementById(id);
         if (el && el.offsetParent !== null) {
-          const top = el.getBoundingClientRect().top + window.scrollY - 70;
+          const top = el.getBoundingClientRect().top + window.scrollY - 72;
           window.scrollTo({ top, behavior: 'smooth' });
         } else {
           requestAnimationFrame(tryScroll);
