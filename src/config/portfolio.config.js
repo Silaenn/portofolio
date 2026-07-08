@@ -341,6 +341,30 @@ const template = {
       desc: "Aaron consistently delivered high-quality work under tight deadlines. Clients always praised his attention to detail and communication.",
       featured: false,
     },
+    {
+      id: 4,
+      name: "David Park",
+      title: "Lead Engineer, Startup Labs",
+      img: "https://randomuser.me/api/portraits/men/75.jpg",
+      desc: "Aaron's mentorship elevated our entire engineering team. He established code review practices and testing standards we still use today.",
+      featured: false,
+    },
+    {
+      id: 5,
+      name: "Jessica Kim",
+      title: "Design Director, Pixel & Co.",
+      img: "https://randomuser.me/api/portraits/women/90.jpg",
+      desc: "Collaborating with Aaron on design-to-code handoff was seamless. His understanding of design systems and component architecture is outstanding.",
+      featured: true,
+    },
+    {
+      id: 6,
+      name: "Ryan O'Brien",
+      title: "Founder, DevForge",
+      img: "https://randomuser.me/api/portraits/men/91.jpg",
+      desc: "Aaron built our entire MVP in 8 weeks. The codebase was so clean we never needed a rewrite. Rare to find that level of quality in a founder.",
+      featured: false,
+    },
   ],
 };
 
