@@ -1,4 +1,4 @@
-<img width="1920" height="964" alt="Aaron-Hanson-Fullstack-Developer" src="https://github.com/user-attachments/assets/cc26c792-10e4-433c-9c0f-9a9dcb015514" /><div align="center">
+<div align="center">
   <br />
   <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white" alt="React" />
   <img src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white" alt="Sass" />
