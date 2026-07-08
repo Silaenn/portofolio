@@ -2,6 +2,7 @@
 
 .section {
   min-height: 100vh;
+  padding-top: 70px;
   display: flex;
   align-items: center;
   border-bottom: $border-width solid $border;
@@ -12,7 +13,6 @@
   @include container;
   width: 100%;
   position: relative;
-  padding: 80px 24px;
 }
 
 .number {
@@ -111,8 +111,7 @@
   &:hover {
     background: $bg;
     color: $text;
-    box-shadow: none;
-    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 $accent;
   }
 }
 
@@ -123,6 +122,7 @@
   &:hover {
     background: $text;
     color: $accent;
+    box-shadow: 2px 2px 0 $accent;
   }
 }
 

@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import SectionTitle from '../shared/SectionTitle';
 import BrutalButton from '../shared/BrutalButton';
+import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './Contact.module.scss';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const layoutRef = useScrollReveal();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ export default function Contact() {
       <div className={styles.inner}>
         <span className={styles.number}>07</span>
         <SectionTitle>Contact</SectionTitle>
-        <div className={styles.layout}>
+        <div ref={layoutRef} className={styles.layout}>
           <div className={styles.info}>
             <div className={styles.block}>
               <span className={styles.label}>EMAIL</span>

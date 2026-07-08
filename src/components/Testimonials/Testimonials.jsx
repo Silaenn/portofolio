@@ -1,16 +1,18 @@
 import SectionTitle from '../shared/SectionTitle';
+import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './Testimonials.module.scss';
 
 export default function Testimonials() {
   const data = config.testimonials;
+  const gridRef = useScrollReveal();
 
   return (
     <section className={styles.section} id="testimonials">
       <div className={styles.inner}>
         <span className={styles.number}>06</span>
         <SectionTitle>Testimonials</SectionTitle>
-        <div className={styles.grid}>
+        <div ref={gridRef} className={styles.grid}>
           {data.map((d) => (
             <div
               key={d.id}

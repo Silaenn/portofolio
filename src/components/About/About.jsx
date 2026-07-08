@@ -1,14 +1,17 @@
 import SectionTitle from '../shared/SectionTitle';
+import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './About.module.scss';
 
 export default function About() {
+  const contentRef = useScrollReveal();
+
   return (
     <section className={styles.section} id="about">
       <div className={styles.inner}>
         <span className={styles.number}>02</span>
         <SectionTitle>About</SectionTitle>
-        <div className={styles.layout}>
+        <div ref={contentRef} className={styles.layout}>
           <div className={styles.avatarCol}>
             {config.avatar ? (
               <div className={styles.avatarFrame}>

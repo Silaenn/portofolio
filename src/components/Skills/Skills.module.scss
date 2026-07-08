@@ -54,10 +54,9 @@
   &:hover {
     background: $text;
     color: $bg;
-    box-shadow: none;
-    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 $accent;
 
-    .icon { color: $bg; }
+    .icon { color: $accent; }
     .name { color: $bg; }
   }
 }

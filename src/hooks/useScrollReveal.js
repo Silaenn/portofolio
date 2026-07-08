@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function useScrollReveal() {
+export default function useScrollReveal(offset = 60, duration = 0.8) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -13,11 +13,11 @@ export default function useScrollReveal() {
 
     gsap.fromTo(
       el,
-      { y: 60, opacity: 0 },
+      { y: offset, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 0.8,
+        duration,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: el,
@@ -26,7 +26,7 @@ export default function useScrollReveal() {
         },
       }
     );
-  }, []);
+  }, [offset, duration]);
 
   return ref;
 }

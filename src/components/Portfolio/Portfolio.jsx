@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import SectionTitle from '../shared/SectionTitle';
 import PortfolioList from '../PortfolioList/PortfolioList';
+import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './Portfolio.module.scss';
 
 export default function Portfolio() {
   const [selected, setSelected] = useState('featured');
   const [data, setData] = useState([]);
+  const filtersRef = useScrollReveal();
+  const gridRef = useScrollReveal(40);
 
   useEffect(() => {
     setData(config.portfolio.filter((item) => item.category === selected));
@@ -17,7 +20,7 @@ export default function Portfolio() {
       <div className={styles.inner}>
         <span className={styles.number}>03</span>
         <SectionTitle>Portfolio</SectionTitle>
-        <ul className={styles.filters}>
+        <ul ref={filtersRef} className={styles.filters}>
           {config.categories.map((item) => (
             <PortfolioList
               key={item.id}
@@ -28,7 +31,7 @@ export default function Portfolio() {
             />
           ))}
         </ul>
-        <div className={styles.grid}>
+        <div ref={gridRef} className={styles.grid}>
           {data.map((item) => (
             <div className={styles.card} key={item.id}>
               <div className={styles.image}>

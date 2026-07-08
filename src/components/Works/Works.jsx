@@ -1,14 +1,17 @@
 import SectionTitle from '../shared/SectionTitle';
+import useScrollReveal from '../../hooks/useScrollReveal';
 import config from '../../config/portfolio.config';
 import styles from './Works.module.scss';
 
 export default function Works() {
+  const timelineRef = useScrollReveal();
+
   return (
     <section className={styles.section} id="works">
       <div className={styles.inner}>
         <span className={styles.number}>04</span>
         <SectionTitle>Experience</SectionTitle>
-        <div className={styles.timeline}>
+        <div ref={timelineRef} className={styles.timeline}>
           {config.works.map((d, i) => (
             <div className={styles.item} key={d.id}>
               <div className={styles.line}>

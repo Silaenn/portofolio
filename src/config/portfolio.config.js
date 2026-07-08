@@ -11,7 +11,7 @@ const template = {
   },
   accentColor: "#FF3D00",
   status: "AVAILABLE FOR WORK",
-  avatar: "https://i.pravatar.cc/400?u=aaron",
+  avatar: "https://i.pravatar.cc/400?img=11",
   about:
     "Fullstack developer with 5+ years of experience building production-grade web applications. I specialize in React, Node.js, and TypeScript, with a strong focus on performance optimization and clean architecture. Passionate about open-source and developer tooling.",
   resume: "",

@@ -25,7 +25,7 @@ function App() {
     <div className="app">
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <main style={{ paddingTop: '70px' }}>
+      <main>
         <Hero />
         <About />
         <Portfolio />

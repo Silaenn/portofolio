@@ -112,8 +112,7 @@
   &:hover {
     background: $bg;
     color: $text;
-    box-shadow: none;
-    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 $accent;
   }
 }
 
@@ -124,5 +123,6 @@
   &:hover {
     background: $text;
     color: $bg;
+    box-shadow: 2px 2px 0 $accent;
   }
 }

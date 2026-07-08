@@ -1,9 +1,9 @@
 import config from '../../config/portfolio.config';
-import useGlitchEffect from '../../hooks/useGlitchEffect';
+import useTypewriter from '../../hooks/useTypewriter';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
-  const glitchedRole = useGlitchEffect(config.role);
+  const { text: typedRole, done } = useTypewriter(config.role, 60);
 
   return (
     <section className={styles.section} id="hero">
@@ -14,8 +14,8 @@ export default function Hero() {
             <p className={styles.label}>HI_THERE</p>
             <h1 className={styles.name}>{config.name}</h1>
             <h2 className={styles.role}>
-              <span className={styles.glitch}>{glitchedRole}</span>
-              <span className={styles.cursor}>_</span>
+              <span className={styles.glitch}>{typedRole}</span>
+              <span className={styles.cursor}>{done ? '_' : '▌'}</span>
             </h2>
             <p className={styles.tagline}>{config.tagline}</p>
             <div className={styles.actions}>
