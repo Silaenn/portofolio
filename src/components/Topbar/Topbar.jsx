@@ -1,9 +1,17 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import config from '../../config/portfolio.config';
 import styles from './Topbar.module.scss';
 
 export default function Topbar({ menuOpen, setMenuOpen }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(ref.current, { y: -70 }, { y: 0, duration: 0.5, ease: 'power2.out' });
+  }, []);
+
   return (
-    <header className={`${styles.topbar} ${menuOpen ? styles.active : ''}`}>
+    <header ref={ref} className={`${styles.topbar} ${menuOpen ? styles.active : ''}`}>
       <div className={styles.inner}>
         <a href="#hero" className={styles.logo}>{config.name}</a>
         <nav className={styles.nav}>

@@ -21,6 +21,24 @@ function App() {
     ScrollTrigger.refresh();
   }, []);
 
+  useEffect(() => {
+    if (window.location.hash) {
+      window.scrollTo(0, 0);
+
+      const id = window.location.hash.replace('#', '');
+      const tryScroll = () => {
+        const el = document.getElementById(id);
+        if (el && el.offsetParent !== null) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 70;
+          window.scrollTo({ top, behavior: 'smooth' });
+        } else {
+          requestAnimationFrame(tryScroll);
+        }
+      };
+      requestAnimationFrame(tryScroll);
+    }
+  }, []);
+
   return (
     <div className="app">
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

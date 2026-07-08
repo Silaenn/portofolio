@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 import SectionTitle from '../shared/SectionTitle';
 import PortfolioList from '../PortfolioList/PortfolioList';
 import useScrollReveal from '../../hooks/useScrollReveal';
@@ -9,11 +10,43 @@ export default function Portfolio() {
   const [selected, setSelected] = useState('featured');
   const [data, setData] = useState([]);
   const filtersRef = useScrollReveal();
-  const gridRef = useScrollReveal(40);
+  const gridRef = useRef(null);
+  const isFirstRun = useRef(true);
 
   useEffect(() => {
     setData(config.portfolio.filter((item) => item.category === selected));
   }, [selected]);
+
+  useEffect(() => {
+    const cards = gridRef.current?.children;
+    if (!cards || cards.length === 0) return;
+
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      gsap.fromTo(
+        cards,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    } else {
+      gsap.fromTo(
+        cards,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power2.out' }
+      );
+    }
+  }, [data]);
 
   return (
     <section className={styles.section} id="portfolio">
