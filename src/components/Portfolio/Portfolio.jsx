@@ -22,32 +22,40 @@ export default function Portfolio() {
     const cards = gridRef.current?.children;
     if (!cards || cards.length === 0) return;
 
-    if (isFirstRun.current) {
-      isFirstRun.current = false;
-      gsap.fromTo(
-        cards,
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.08,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: 'top bottom',
-            invalidateOnRefresh: true,
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    } else {
-      gsap.fromTo(
-        cards,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power2.out' }
-      );
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.set(cards, { y: 0, opacity: 1, clearProps: 'opacity' });
+      return;
     }
+
+    const ctx = gsap.context(() => {
+      if (isFirstRun.current) {
+        isFirstRun.current = false;
+        gsap.fromTo(
+          cards,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: 'top bottom',
+              invalidateOnRefresh: true,
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      } else {
+        gsap.fromTo(
+          cards,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power2.out' }
+        );
+      }
+    });
+    return () => ctx.revert();
   }, [data]);
 
   return (

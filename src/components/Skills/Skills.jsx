@@ -41,26 +41,30 @@ export default function Skills() {
   const gridRef = useRef(null);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const cards = gridRef.current?.children;
     if (!cards || cards.length === 0) return;
 
-    gsap.fromTo(
-      cards,
-      { y: 60, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.05,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: 'top bottom',
-          invalidateOnRefresh: true,
-          toggleActions: 'play none none none',
-        },
-      }
-    );
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cards,
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.05,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: 'top bottom',
+            invalidateOnRefresh: true,
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+    return () => ctx.revert();
   }, []);
 
   return (

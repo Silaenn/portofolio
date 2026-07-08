@@ -9,22 +9,26 @@ export default function Hero() {
   const photoRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline();
-    if (contentRef.current?.children) {
-      tl.fromTo(
-        contentRef.current.children,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out' }
-      );
-    }
-    if (photoRef.current) {
-      tl.fromTo(
-        photoRef.current,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
-        '-=0.3'
-      );
-    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      if (contentRef.current?.children) {
+        tl.fromTo(
+          contentRef.current.children,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out' }
+        );
+      }
+      if (photoRef.current) {
+        tl.fromTo(
+          photoRef.current,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
+          '-=0.3'
+        );
+      }
+    });
+    return () => ctx.revert();
   }, []);
 
   return (

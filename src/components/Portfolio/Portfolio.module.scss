@@ -119,6 +119,7 @@
   color: $accent-text;
   text-decoration: underline;
   letter-spacing: 0.05em;
+  transition: color 0.1s ease;
 
   &:hover {
     color: $text;

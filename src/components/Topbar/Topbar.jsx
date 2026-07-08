@@ -7,7 +7,11 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(ref.current, { y: -70 }, { y: 0, duration: 0.5, ease: 'power2.out' });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(ref.current, { y: -72 }, { y: 0, duration: 0.5, ease: 'power2.out' });
+    });
+    return () => ctx.revert();
   }, []);
 
   return (
