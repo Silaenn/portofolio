@@ -1,0 +1,83 @@
+@import '../../styles/variables';
+
+.section {
+  padding: 80px 0;
+  border-bottom: $border-width solid $border;
+  position: relative;
+}
+
+.inner {
+  @include container;
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  font-family: $font-mono;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #eee;
+  line-height: 1;
+  pointer-events: none;
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  border: $border-width solid $border;
+
+  &:hover {
+    background: $text;
+    color: $bg;
+  }
+}
+
+.image {
+  height: 200px;
+  overflow: hidden;
+  border-bottom: $border-width solid $border;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+.placeholderText {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.cardTitle {
+  padding: 16px;
+  font-size: 1rem;
+}

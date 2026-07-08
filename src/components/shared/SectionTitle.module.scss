@@ -1,0 +1,8 @@
+@import '../../styles/variables';
+
+.title {
+  padding: 0 0 12px;
+  margin-bottom: 48px;
+  border-bottom: $border-width solid $border;
+  display: inline-block;
+}

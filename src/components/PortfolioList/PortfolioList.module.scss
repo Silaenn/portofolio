@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.item {
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: $border-width solid $border;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  list-style: none;
+
+  &:hover {
+    background: $text;
+    color: $bg;
+  }
+
+  &.active {
+    background: $text;
+    color: $bg;
+  }
+}

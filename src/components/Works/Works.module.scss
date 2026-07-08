@@ -1,0 +1,97 @@
+@import '../../styles/variables';
+
+.section {
+  padding: 80px 0;
+  border-bottom: $border-width solid $border;
+  position: relative;
+}
+
+.inner {
+  @include container;
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  font-family: $font-mono;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #eee;
+  line-height: 1;
+  pointer-events: none;
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  display: flex;
+  gap: 24px;
+  position: relative;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border: $border-width solid $border;
+  background: $accent;
+  flex-shrink: 0;
+}
+
+.connector {
+  width: $border-width;
+  flex: 1;
+  background: $border;
+  min-height: 24px;
+}
+
+.card {
+  flex: 1;
+  padding: 4px 0 40px;
+}
+
+.year {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $accent;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.company {
+  font-size: 1.25rem;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.role {
+  font-family: $font-mono;
+  font-size: 0.8125rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 0.9375rem;
+  max-width: 500px;
+  color: #444;
+}

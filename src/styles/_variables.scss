@@ -1,0 +1,29 @@
+$bg: #FFFFFF;
+$text: #000000;
+$accent: #FF3D00;
+$border: #000000;
+$link: #0000EE;
+$font-mono: "JetBrains Mono", ui-monospace, monospace;
+$font-body: system-ui, -apple-system, sans-serif;
+$border-width: 2px;
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$content-max: 1200px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: 0 24px;
+}

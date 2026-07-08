@@ -1,0 +1,141 @@
+@import '../../styles/variables';
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: $border-width solid $border;
+  position: relative;
+}
+
+.inner {
+  @include container;
+  width: 100%;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: $font-mono;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #eee;
+  line-height: 1;
+  pointer-events: none;
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+.content {
+  max-width: 720px;
+}
+
+.label {
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  color: $accent;
+  margin-bottom: 16px;
+  letter-spacing: 0.15em;
+}
+
+.name {
+  margin-bottom: 8px;
+}
+
+.role {
+  margin-bottom: 24px;
+  min-height: 1.2em;
+}
+
+.glitch {
+  color: $accent;
+}
+
+.cursor {
+  font-family: $font-mono;
+  color: $text;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.tagline {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: $border-width solid $border;
+  background: $text;
+  color: $bg;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    background: $bg;
+    color: $text;
+  }
+}
+
+.btnOutline {
+  background: $bg;
+  color: $text;
+
+  &:hover {
+    background: $text;
+    color: $bg;
+  }
+}
+
+.status {
+  position: absolute;
+  bottom: 80px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+
+  @include mobile {
+    position: static;
+    margin-top: 48px;
+  }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

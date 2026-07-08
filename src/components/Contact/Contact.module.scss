@@ -1,0 +1,139 @@
+@import '../../styles/variables';
+
+.section {
+  padding: 80px 0;
+  border-bottom: $border-width solid $border;
+  position: relative;
+}
+
+.inner {
+  @include container;
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  font-family: $font-mono;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #eee;
+  line-height: 1;
+  pointer-events: none;
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $accent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+
+  a {
+    font-family: $font-mono;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: $text;
+    text-decoration: underline;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.form {
+  border: $border-width solid $border;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terminalHeader {
+  display: flex;
+  gap: 8px;
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  padding-bottom: 12px;
+  border-bottom: $border-width solid $border;
+  margin-bottom: 8px;
+}
+
+.prompt {
+  color: #4ade80;
+}
+
+.command {
+  color: $text;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fieldLabel {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+}
+
+.input, .textarea {
+  padding: 10px 12px;
+  border: $border-width solid $border;
+  background: $bg;
+  font-size: 1rem;
+
+  &:focus {
+    outline: 3px solid $border;
+    outline-offset: 2px;
+  }
+
+  &::placeholder {
+    color: #bbb;
+  }
+}
+
+.success {
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  color: #4ade80;
+}

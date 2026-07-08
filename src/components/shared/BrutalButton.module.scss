@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.btn {
+  display: inline-block;
+  font-family: $font-mono;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding: 12px 24px;
+  border: $border-width solid $border;
+  background: $bg;
+  color: $text;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    background: $text;
+    color: $bg;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $border;
+    outline-offset: 2px;
+  }
+}

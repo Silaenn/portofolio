@@ -1,26 +1,37 @@
-import { useState } from "react";
-import "./app.scss";
-import Contact from "./components/contact/Contact";
-import Intro from "./components/intro/Intro";
-import Portofolio from "./components/portofolio/Portofolio";
-import Testimonials from "./components/testimonials/Testimonials";
-import Topbar from "./components/topbar/Topbar";
-import Works from "./components/works/Works";
-import Menu from "./components/menu/Menu";
+import { useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Topbar from './components/Topbar/Topbar';
+import Menu from './components/Menu/Menu';
+import Hero from './components/Hero/Hero';
+import Portfolio from './components/Portfolio/Portfolio';
+import Works from './components/Works/Works';
+import Skills from './components/Skills/Skills';
+import Testimonials from './components/Testimonials/Testimonials';
+import Contact from './components/Contact/Contact';
+import './styles/global.scss';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, []);
+
   return (
     <div className="app">
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div className="sections">
-        <Intro />
-        <Portofolio />
+      <main style={{ paddingTop: '70px' }}>
+        <Hero />
+        <Portfolio />
         <Works />
+        <Skills />
         <Testimonials />
         <Contact />
-      </div>
+      </main>
     </div>
   );
 }

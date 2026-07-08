@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.topbar {
+  width: 100%;
+  height: 70px;
+  background: $bg;
+  border-bottom: $border-width solid $border;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  &.active {
+    background: $text;
+
+    .inner { border-color: $bg; }
+    .logo { color: $bg; }
+    .hamburger span { background: $bg; }
+  }
+}
+
+.inner {
+  @include container;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: $border-width solid transparent;
+}
+
+.logo {
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: $text;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px;
+  width: 32px;
+  height: 26px;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $text;
+    transition: transform 0s;
+  }
+}

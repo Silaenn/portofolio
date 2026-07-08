@@ -1,0 +1,105 @@
+@import '../../styles/variables';
+
+.section {
+  padding: 80px 0;
+  border-bottom: $border-width solid $border;
+  position: relative;
+}
+
+.inner {
+  @include container;
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  font-family: $font-mono;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #eee;
+  line-height: 1;
+  pointer-events: none;
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  border: $border-width solid $border;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.featured {
+    border-width: 3px;
+    background: $text;
+    color: $bg;
+
+    .mark { color: $accent; }
+    .name { color: $bg; }
+    .title { color: #999; }
+  }
+}
+
+.quote {
+  margin-bottom: 24px;
+}
+
+.mark {
+  font-family: $font-mono;
+  font-size: 3rem;
+  line-height: 1;
+  color: $accent;
+  display: block;
+}
+
+.quote p {
+  font-style: italic;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border: $border-width solid $border;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+}
+
+.name {
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 0.8125rem;
+  color: #666;
+}
