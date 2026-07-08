@@ -77,7 +77,7 @@ Everything is driven by a single config file (`src/config/portfolio.config.js`),
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/porto.git
+git clone https://github.com/Silaenn/portofolio.git
 cd porto
 npm install
 ```
@@ -111,8 +111,7 @@ src/
 ├── config/
 │   └── portfolio.config.js      # single source of truth for all content
 ├── hooks/
-│   ├── useScrollReveal.js        # GSAP + Intersection fade-in hook
-│   └── useTypewriter.js          # (optional) character-by-character typing
+│   └── useScrollReveal.js        # GSAP + Intersection fade-in hook
 ├── styles/
 │   ├── _variables.scss           # colors, fonts, breakpoints, mixins
 │   ├── _reset.scss               # CSS reset
@@ -173,9 +172,8 @@ npm run build
 
 ## Author
 
-**Template by:** Aaron Hanson  
-**GitHub:** [@aaronhanson](https://github.com/aaronhanson)  
-**Website:** [aaronhanson.dev](https://aaronhanson.dev)
+**Project:** [Silaenn/portofolio](https://github.com/Silaenn/portofolio)  
+**Template by:** Aaron Hanson (dummy data)
 
 ---
 
