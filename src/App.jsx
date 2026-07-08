@@ -7,6 +7,7 @@ import Hero from './components/Hero/Hero';
 import Portfolio from './components/Portfolio/Portfolio';
 import Works from './components/Works/Works';
 import Skills from './components/Skills/Skills';
+import About from './components/About/About';
 import Testimonials from './components/Testimonials/Testimonials';
 import Contact from './components/Contact/Contact';
 import './styles/global.scss';
@@ -26,6 +27,7 @@ function App() {
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <main style={{ paddingTop: '70px' }}>
         <Hero />
+        <About />
         <Portfolio />
         <Works />
         <Skills />

@@ -15,21 +15,38 @@ export default function Contact() {
   return (
     <section className={styles.section} id="contact">
       <div className={styles.inner}>
-        <span className={styles.number}>06</span>
+        <span className={styles.number}>07</span>
         <SectionTitle>Contact</SectionTitle>
         <div className={styles.layout}>
           <div className={styles.info}>
-            <p className={styles.line}>
+            <div className={styles.block}>
               <span className={styles.label}>EMAIL</span>
-              <span>{config.email}</span>
-            </p>
-            <p className={styles.line}>
+              <span className={styles.value}>{config.email}</span>
+            </div>
+            <div className={styles.block}>
               <span className={styles.label}>PHONE</span>
-              <span>{config.phone}</span>
-            </p>
+              <span className={styles.value}>{config.phone}</span>
+            </div>
+            <div className={styles.block}>
+              <span className={styles.label}>LOCATION</span>
+              <span className={styles.value}>Jakarta, Indonesia</span>
+            </div>
+            <div className={styles.block}>
+              <span className={styles.label}>AVAILABILITY</span>
+              <span className={styles.value}>Full-time / Freelance</span>
+            </div>
+            <div className={styles.block}>
+              <span className={styles.label}>RESPONSE TIME</span>
+              <span className={styles.value}>Within 24 hours</span>
+            </div>
             <div className={styles.social}>
-              <a href={config.social.github} target="_blank" rel="noreferrer">GITHUB →</a>
-              <a href={config.social.linkedin} target="_blank" rel="noreferrer">LINKEDIN →</a>
+              <span className={styles.label}>FIND_ME_ON</span>
+              <div className={styles.socialLinks}>
+                <a href={config.social.github} target="_blank" rel="noreferrer">GITHUB</a>
+                <a href={config.social.linkedin} target="_blank" rel="noreferrer">LINKEDIN</a>
+                <a href="https://twitter.com/aaronhanson" target="_blank" rel="noreferrer">TWITTER</a>
+                <a href="https://dribbble.com/aaronhanson" target="_blank" rel="noreferrer">DRIBBBLE</a>
+              </div>
             </div>
           </div>
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -46,8 +63,12 @@ export default function Contact() {
               <input type="email" placeholder="your@email.com" className={styles.input} required />
             </div>
             <div className={styles.field}>
+              <label className={styles.fieldLabel}>SUBJECT</label>
+              <input type="text" placeholder="What's this about?" className={styles.input} />
+            </div>
+            <div className={styles.field}>
               <label className={styles.fieldLabel}>MESSAGE</label>
-              <textarea placeholder="Your message" className={styles.textarea} rows={4} required></textarea>
+              <textarea placeholder="Your message" className={styles.textarea} rows={5} required></textarea>
             </div>
             <BrutalButton type="submit">SEND_MESSAGE</BrutalButton>
             {sent && <p className={styles.success}>✓ Message sent (demo)</p>}

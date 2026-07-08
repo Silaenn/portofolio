@@ -8,7 +8,7 @@ export default function Testimonials() {
   return (
     <section className={styles.section} id="testimonials">
       <div className={styles.inner}>
-        <span className={styles.number}>05</span>
+        <span className={styles.number}>06</span>
         <SectionTitle>Testimonials</SectionTitle>
         <div className={styles.grid}>
           {data.map((d) => (

@@ -12,8 +12,7 @@
   @include container;
   width: 100%;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 80px 24px;
 }
 
 .number {
@@ -32,8 +31,20 @@
   }
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+  align-items: center;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 .content {
-  max-width: 720px;
+  max-width: 640px;
 }
 
 .label {
@@ -42,6 +53,9 @@
   color: $accent;
   margin-bottom: 16px;
   letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 4px 12px;
+  border: $border-width solid $border;
 }
 
 .name {
@@ -91,27 +105,69 @@
   color: $bg;
   text-decoration: none;
   letter-spacing: 0.05em;
+  box-shadow: $shadow;
+  transition: all 0.1s ease;
 
   &:hover {
     background: $bg;
     color: $text;
+    box-shadow: none;
+    transform: translate(2px, 2px);
   }
 }
 
 .btnOutline {
-  background: $bg;
-  color: $text;
+  background: $accent;
+  color: $bg;
 
   &:hover {
     background: $text;
-    color: $bg;
+    color: $accent;
   }
 }
 
+.photoCol {
+  display: flex;
+  justify-content: center;
+
+  @include mobile {
+    order: -1;
+  }
+}
+
+.photoFrame {
+  width: 320px;
+  height: 380px;
+  border: $border-width solid $border;
+  overflow: hidden;
+  box-shadow: $shadow;
+
+  @include mobile {
+    width: 200px;
+    height: 240px;
+  }
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 0.1em;
+}
+
 .status {
-  position: absolute;
-  bottom: 80px;
-  left: 24px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -120,11 +176,9 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #666;
-
-  @include mobile {
-    position: static;
-    margin-top: 48px;
-  }
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: $border-width solid $border;
 }
 
 .dot {

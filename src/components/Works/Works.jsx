@@ -6,7 +6,7 @@ export default function Works() {
   return (
     <section className={styles.section} id="works">
       <div className={styles.inner}>
-        <span className={styles.number}>03</span>
+        <span className={styles.number}>04</span>
         <SectionTitle>Experience</SectionTitle>
         <div className={styles.timeline}>
           {config.works.map((d, i) => (

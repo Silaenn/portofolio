@@ -41,37 +41,59 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
-.line {
+.block {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 12px;
+  border: $border-width solid $border;
+  background: $bg;
 }
 
 .label {
   font-family: $font-mono;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: $accent;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
+.value {
+  font-family: $font-mono;
+  font-size: 0.9375rem;
+  color: $text;
+}
+
 .social {
   display: flex;
-  gap: 16px;
-  margin-top: 16px;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  border: $border-width solid $border;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 
   a {
     font-family: $font-mono;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     text-transform: uppercase;
     color: $text;
-    text-decoration: underline;
+    text-decoration: none;
+    padding: 6px 12px;
+    border: $border-width solid $border;
+    letter-spacing: 0.05em;
+    transition: all 0.1s ease;
 
     &:hover {
-      color: $accent;
+      background: $text;
+      color: $bg;
     }
   }
 }
@@ -82,6 +104,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  box-shadow: $shadow;
 }
 
 .terminalHeader {
@@ -89,17 +112,12 @@
   gap: 8px;
   font-family: $font-mono;
   font-size: 0.875rem;
-  padding-bottom: 12px;
+  padding: 8px 12px;
   border-bottom: $border-width solid $border;
   margin-bottom: 8px;
-}
-
-.prompt {
-  color: #4ade80;
-}
-
-.command {
-  color: $text;
+  background: $accent;
+  color: $bg;
+  margin: -24px -24px 8px;
 }
 
 .field {

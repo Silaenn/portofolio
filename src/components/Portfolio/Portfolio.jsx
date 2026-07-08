@@ -15,7 +15,7 @@ export default function Portfolio() {
   return (
     <section className={styles.section} id="portfolio">
       <div className={styles.inner}>
-        <span className={styles.number}>02</span>
+        <span className={styles.number}>03</span>
         <SectionTitle>Portfolio</SectionTitle>
         <ul className={styles.filters}>
           {config.categories.map((item) => (
@@ -40,7 +40,29 @@ export default function Portfolio() {
                   </div>
                 )}
               </div>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <div className={styles.body}>
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+                {item.desc && <p className={styles.desc}>{item.desc}</p>}
+                {item.stack && item.stack.length > 0 && (
+                  <div className={styles.tags}>
+                    {item.stack.map((tech) => (
+                      <span key={tech} className={styles.tag}>{tech}</span>
+                    ))}
+                  </div>
+                )}
+                <div className={styles.links}>
+                  {item.demo && (
+                    <a href={item.demo} target="_blank" rel="noreferrer" className={styles.link}>
+                      LIVE →
+                    </a>
+                  )}
+                  {item.github && (
+                    <a href={item.github} target="_blank" rel="noreferrer" className={styles.link}>
+                      CODE →
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
           ))}
         </div>

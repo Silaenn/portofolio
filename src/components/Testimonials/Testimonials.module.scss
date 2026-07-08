@@ -39,15 +39,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: $shadow;
+  transition: all 0.15s ease;
+
+  &:hover {
+    box-shadow: 6px 6px 0 $accent;
+    transform: translate(-2px, -2px);
+  }
 
   &.featured {
-    border-width: 3px;
-    background: $text;
+    border-width: $border-thick;
+    background: $accent;
     color: $bg;
+    box-shadow: 6px 6px 0 $border;
 
-    .mark { color: $accent; }
+    .mark { color: $bg; }
     .name { color: $bg; }
-    .title { color: #999; }
+    .title { color: rgba(255,255,255,0.6); }
   }
 }
 
@@ -79,6 +87,7 @@
   border: $border-width solid $border;
   overflow: hidden;
   flex-shrink: 0;
+  box-shadow: 2px 2px 0 $border;
 
   img {
     width: 100%;
