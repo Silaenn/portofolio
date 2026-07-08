@@ -47,7 +47,7 @@
   display: flex;
   gap: 4px;
 
-  @include mobile {
+  @media (max-width: 900px) {
     display: none;
   }
 }
@@ -82,7 +82,7 @@
   background: none;
   cursor: pointer;
 
-  @include mobile {
+  @media (max-width: 900px) {
     display: flex;
   }
 

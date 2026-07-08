@@ -42,6 +42,10 @@
 .avatarCol {
   display: flex;
   justify-content: center;
+
+  @include mobile {
+    justify-content: flex-start;
+  }
 }
 
 .avatarFrame {
