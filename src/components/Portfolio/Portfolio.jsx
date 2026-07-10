@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionTitle from '../shared/SectionTitle';
 import SectionNumber from '../shared/SectionNumber';
 import PortfolioList from '../PortfolioList/PortfolioList';
@@ -56,6 +57,26 @@ export default function Portfolio() {
       }
     });
     return () => ctx.revert();
+  }, [data]);
+
+  useEffect(() => {
+    if (data.length === 0) return;
+
+    ScrollTrigger.refresh();
+
+    const imgs = gridRef.current?.querySelectorAll('img');
+    if (!imgs || imgs.length === 0) return;
+
+    let loaded = 0;
+    const total = imgs.length;
+    const onLoad = () => {
+      loaded++;
+      if (loaded === total) ScrollTrigger.refresh();
+    };
+    imgs.forEach((img) => {
+      if (img.complete) onLoad();
+      else img.addEventListener('load', onLoad, { once: true });
+    });
   }, [data]);
 
   return (
